@@ -10,14 +10,11 @@
 			<h1><a href="/">My Great Blog</a></h1>
 		</div>
 		<div>
-			<p>Published on: 16 Aug 2019</p>
-			<h2><a href="">My First Post</a></h2>
-			<p>Sit quia consequuntur quidem consectetur totam. Magni minus molestias exercitationem ipsam laudantium, repudiandae? Dolores distinctio qui officia placeat quae ea</p>
-		</div>
-		<div>
-			<p>Published on: 16 Aug 2019</p>
-			<h2><a href="">My First Post</a></h2>
-			<p>Sit alias eius id iste eum Odit itaque hic ea pariatur quam id quaerat quod Provident perspiciatis vel mollitia doloribus alias! Sed voluptates debitis odio.</p>
+			{% for post in posts %}
+			<p>published: {{ post.published_date }}</p>
+			<h2><a href="">{{ post.title }}</a></h2>
+			<p>{{ post.text|linebreaksbr }}</p>			
+			{% endfor %}
 		</div>
 	</body>
 </html>
